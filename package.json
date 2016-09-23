@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "watch": "DEBUG=boilerplate:* node-dev index.js",
+    "watch": "DEBUG=boilerplate:*,${DEBUG} node-dev index.js",
     "jsx:build": "browserify -o public/js/bundle.js -t [ babelify --presets [ es2015 react ] ] jsx/bundle.js",
     "jsx:watch": "watchify -d -v -o public/js/bundle.js -t [ babelify --presets [ es2015 react ] ] jsx/bundle.js",
     "db:latest": "knex migrate:latest",
