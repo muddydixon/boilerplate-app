@@ -1,0 +1,17 @@
+name: boilerplate
+port: 8080
+
+database:
+  client: mysql
+  connection:
+    host:     192.168.99.100
+    port:     3306
+    database: boilerplate
+    user:     boilerplate
+    password: boilerplate
+    charset:  utf8mb4
+  pool:
+    min: 2
+    max: 10
+  migration:
+    tableName: knex_migration
