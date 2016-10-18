@@ -1,26 +1,30 @@
 import React, {Component} from "react";
 
-import BaseStore from "../stores/base-store";
-import BaseAction from "../actions/base-action";
+import ErrorStore from "../stores/error-store";
+import SelfStore from "../stores/self-store";
+import UserAction from "../actions/user-action";
 
 import Header from "../components/header";
+import Error from "../components/error";
 
 export default class App extends Component {
   static getStores(){
-    return [BaseStore];
+    return [SelfStore];
   }
 
   static calculateState(){
     return {
-      base: BaseStore.getState()
+      self: SelfStore.getState()
     };
   }
   componentDidMount(){
-    // BaseAction.fetchAll();
+    // UserAction.fetchSelf();
   }
   render(){
+    console.log(this.state);
     return <div>
-      <Header />
+      <Header self={this.state.self}/>
+      <Error error={this.state.error }/>
       {this.props.children && React.cloneElement(this.props.children, {data: this.state})}
       </div>;
   }

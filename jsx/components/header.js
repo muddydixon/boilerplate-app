@@ -4,8 +4,8 @@ import Const from "../constants";
 
 export default class Header extends Component {
   render(){
-    const {currentUser} = this.props;
-    const nav = currentUser ?
+    const {self} = this.props;
+    const nav = self ?
             <nav className="collapse navbar-collapse">
             <ul className="nav navbar-nav">
             <li><Link to="/signout">Signout</Link></li>
@@ -25,9 +25,6 @@ export default class Header extends Component {
                </Link>
                <nav className="collapse navbar-collapse">
                  <ul className="nav navbar-nav">
-                   <li><Link to="/"><i className="fa fa-list" />&nbsp;List</Link></li>
-                   <li><Link to="/create"><i className="fa fa-cube" />&nbsp;Create</Link></li>
-                   <li><Link to="/config"><i className="fa fa-cog" />&nbsp;Config</Link></li>
                  </ul>
                </nav>
              </div>
